@@ -1,0 +1,4 @@
+{
+    "HALOGENS": ["F", "Cl", "Br", "I"],
+    "TWO_LETTERS": ["Cl", "Ca", "Ag", "Cd", "Cu", "Hg", "Mg", "Na", "Zn"]
+}

@@ -1,0 +1,278 @@
+{
+    "LinearRegression": {
+        "fit_intercept": [false],
+        "normalize" : [false]
+    },
+
+
+    "Lasso": {
+        "alpha": [0.15, 0.25, 0.5, 0.75],
+        "selection": ["random", "cyclic"],
+        "fit_intercept": [false, true],
+        "normalize": [false, true],
+        "max_iter": [5000],
+        "positive": [true, false]
+    },
+
+    "SGDRegressor": {
+
+    },
+    "PassiveAggressiveRegressor" : {},
+    "LassoLars" : {},
+
+    "Ridge": {
+        "alpha" : [10],
+        "solver" :  ["auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga"]
+    },
+    "Ridge_reserva": {
+        "alpha" : [0.0005],
+        "fit_intercept" : ["False", "True"],
+        "max_iter" : ["None"],
+        "normalize" : ["False", "True"],
+        "solver" :  ["auto","auto", "svd", "cholesky", "lsqr", "sparse_cg", "sag", "saga"],
+        "tol" : [0.001]
+    },
+
+
+    "SVR" : {
+            "kernel": ["rbf", "poly", "linear"],
+                "gamma": [1e-5, 1e-4, 1e-3],
+                "C": [0.01, 0.1, 1, 10, 100],
+                "epsilon": [0.05, 0.1, 0.2, 0.35, 0.5]
+        },
+        "SVR_reserva" : {
+                "kernel": ["rbf", "poly", "linear"],
+                "gamma": [1e-5, 1e-4, 1e-3],
+                "C": [0.01, 0.1, 1, 10, 100],
+                "epsilon": [0.05, 0.1, 0.2, 0.35, 0.5]
+            },
+    "NuSVR" : {
+            "kernel": ["linear"],
+            "gamma": ["scale"],
+            "C": [1],
+            "nu": [0.3]
+        },
+
+    "LinearSVR" : {
+        "epsilon": [ 0.35, 0.5],
+        "C": [10, 100],
+        "loss": ["epsilon_insensitive","l1", "l2"],
+        "max_iter": [1000]
+
+    },
+        "LinearSVR__reserva" : {
+            "penalty": ["l1", "l2"],
+            "dual": [false],
+            "multi_class": ["ovr", "crammer_singer"],
+            "fit_intercept": [false],
+            "class_weight": ["balanced"],
+            "max_iter": [100]
+        },
+    "GaussianProcessRegressor": {
+        "alpha": [0.15, 0.25, 0.5, 0.75]
+    },
+
+
+      "TheilSenRegressor": {
+        "random_state": [42]
+    },
+
+
+      "RANSACRegressor": {
+        "random_state": [42]
+    },
+
+
+    "KNeighborsRegressor": {
+        "n_neighbors": [10],
+        "weights": ["uniform"],
+        "algorithm": ["ball_tree"],
+        "metric" : ["minkowski"],
+        "p": [3],
+        "leaf_size" : [10]
+    },
+
+
+
+    "KNeighborsRegressor_reserve": {
+        "n_neighbors": [50],
+        "weights": ["uniform", "distance"],
+        "algorithm": ["auto", "ball_tree", "kd_tree"],
+        "metric" : ["minkowski"],
+        "p": [2],
+        "leaf_size" : [10]
+    },
+
+    "DecisionTreeRegressor": {
+        "criterion": ["mae"],
+        "min_samples_split": [6],
+        "min_samples_leaf" : [1],
+        "max_features": ["sqrt"],
+        "splitter" : ["best"],
+        "max_depth" : [6],
+        "min_weight_fraction_leaf":[0.0],
+        "min_impurity_decrease" : [0.0]
+    },
+
+
+
+    "Forests": {
+        "n_estimators": [90],
+        "criterion": ["mae", "mse","friedman_mse"],
+        "max_features": ["auto", "sqrt", "log2", 8],
+        "warm_start" : ["True"],
+        "bootstrap" : ["True"],
+        "min_samples_split" : [10],
+        "min_samples_leaf" : [1]
+
+    },
+    "Forests_extra": {
+        "n_estimators": [150],
+        "criterion": ["mae", "mse","friedman_mse"],
+        "max_features": ["auto", "sqrt", "log2",15],
+        "warm_start" : ["False", "True"],
+        "min_samples_split" : [2],
+        "min_samples_leaf" : [1],
+        "bootstrap" : ["True"],
+        "max_leaf_nodes" : [3]
+    },
+        "Forests_reserva": {
+            "n_estimators": [200],
+            "criterion": ["mae", "mse","friedman_mse"],
+            "max_features": ["auto", "sqrt", "log2",20],
+            "warm_start" : ["False", "True"],
+            "min_samples_split" : [2],
+            "min_samples_leaf" : [2],
+            "bootstrap" : ["False", "True"],
+            "max_depth" : [20],
+            "oob_score" : ["True"]
+        },
+
+    "GradientBoostingRegressor": {
+        "n_estimators": [150],
+        "criterion": ["friedman_mse"],
+        "learning_rate": [0.05],
+        "max_features": ["auto", "sqrt", "log2"],
+        "loss": ["ls"],
+        "subsample": [1],
+        "n_iter_no_change"  : [100],
+        "validation_fraction" : [0.1],
+        "tol" : [0.01],
+        "warm_start" : ["True"],
+        "min_samples_split" : [2]
+
+
+
+    },
+    "GradientBoostingRegressor_reserva": {
+        "n_estimators": [200],
+        "criterion": ["friedman_mse", "mae","mse"],
+        "max_features": ["auto", "sqrt", "log2",20],
+        "learning_rate": [ 1,0.01,0.1],
+        "loss": ["huber","ls","lad","quantile"],
+        "min_samples_split" : [2],
+        "min_samples_leaf" : [2],
+        "subsample": [1],
+        "n_iter_no_change"  : [100],
+        "validation_fraction" : [0.2],
+        "tol" : [0.01],
+        "warm_start" : ["False"],
+        "max_leaf_nodes" : [8],
+        "min_impurity_decrease": [ 0.1],
+        "max_depth" : [5]
+
+    },
+
+    "LGBMRegressor": {
+        "n_estimators": [100],
+        "max_bin" : [100],
+        "num_leaves" : [31],
+        "learning_rate": [0.01,0.1],
+        "feature_fraction_seed": [42],
+        "bagging_seed": [42],
+        "max_depth" : [-20],
+        "metric" : ["mae", "friedman_mse", "mse"]
+
+
+
+    },
+
+    "LGBMRegressor_reserva": {
+        "n_estimators": [100],
+        "max_bin" : [100],
+        "num_leaves" : [31],
+        "learning_rate": [0.01,0.1],
+        "feature_fraction_seed": [42],
+        "bagging_seed": [42],
+        "max_depth" : [-20],
+        "metric" : ["mae", "friedman_mse", "mse"]
+
+
+    },
+    "XGBRegressor": {
+        "n_estimators": [180],
+        "learning_rate": [0.075],
+        "reg_alpha": [0.7],
+        "reg_lambda": [0.75],
+        "nthread": [-1],
+        "seed": [42]
+    },
+    "other" : {
+        "max_depth": [5, 6, 7],
+        "min_child_weight": [4],
+        "silent": [1],
+        "subsample": [0.7],
+        "min_child_weight": [1],
+        "colsample_bytree": [1],
+        "objective" : ["reg:linear"],
+        "booster" :  ["gblinear","gbtree"],
+        "max_leaf_nodes" : [8],
+        "lambda" : [0.05],
+        "max_depth": [3],
+        "colsample_bytree": [0.7]
+    },
+
+    "FeedForwardNet": {
+        "n_hidden_layers": [1, 3, 5, 7, 9],
+        "output_activation": [null],
+        "output_dim": [1],
+        "n_epochs": [50]
+    },
+
+    "AdaBoostRegressor": {
+        "base_estimator": [null],
+        "n_estimators": [100],
+        "learning_rate": [0.01],
+        "loss" : ["linear","square", "exponential"]
+    },
+
+    "MLPRegressor": {
+        "activation": ["relu", "identity", "logistic", "tanh"],
+        "solver": ["adam"],
+        "learning_rate": ["constant"],
+        "learning_rate_init": [0.01],
+        "max_iter": [100],
+        "tol": [0.01],
+        "hidden_layer_sizes": [50],
+        "warm_start" : ["True"],
+        "validation_fraction": [0.1],
+        "batch_size" : [50]
+
+     },
+
+     "MLPRegressor_reserva": {
+        "activation": ["relu", "identity", "logistic", "tanh"],
+                  "solver": ["lbfgs",  "adam","sgd"],
+                  "alpha": [0.1],
+                  "learning_rate": ["adaptive", "constant"],
+                  "learning_rate_init": [0.001],
+                  "max_iter": [300],
+                  "tol": [0.1],
+                  "hidden_layer_sizes": [200],
+                  "warm_start" : ["True"],
+                  "beta_1": [0.9],
+                  "beta_2" : [0.999]
+
+      }
+
+}
